@@ -1,0 +1,14 @@
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\bin\Debug\net9.0\ListaDeCompras.ConsoleApp.exe
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\bin\Debug\net9.0\ListaDeCompras.ConsoleApp.deps.json
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\bin\Debug\net9.0\ListaDeCompras.ConsoleApp.runtimeconfig.json
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\bin\Debug\net9.0\ListaDeCompras.ConsoleApp.dll
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\bin\Debug\net9.0\ListaDeCompras.ConsoleApp.pdb
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ListaDeCompras.ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ListaDeCompras.ConsoleApp.AssemblyInfoInputs.cache
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ListaDeCompras.ConsoleApp.AssemblyInfo.cs
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ListaDeCompras.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ListaDeCompras.ConsoleApp.dll
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\refint\ListaDeCompras.ConsoleApp.dll
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ListaDeCompras.ConsoleApp.pdb
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ListaDeCompras.ConsoleApp.genruntimeconfig.cache
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ref\ListaDeCompras.ConsoleApp.dll
