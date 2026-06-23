@@ -4,5 +4,5 @@ public abstract class EntidadeBase
 {
     public int Id { get; set; }
 
-    public abstract void Atualizar(EntidadeBase entidaqdeAtualizada);
+    public abstract void Atualizar(EntidadeBase entidadeAtualizada);
 }

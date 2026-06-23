@@ -1,3 +1,5 @@
+using ListaDeCompras.ConsoleApp.Modulos.ModuloCategoria;
+
 namespace ListaDeCompras.ConsoleApp.Compartilhado;
 
 public class TelaPrincipal
