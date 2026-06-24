@@ -29,7 +29,7 @@ public class TelaPrincipal
         string? opcaoMenuPrincipal = Console.ReadLine()?.ToUpper();
 
         if (opcaoMenuPrincipal == "1")
-            return null;
+            return new TelaCategoria(repositorioCategoria);
 
         if (opcaoMenuPrincipal == "2")
             return null;
