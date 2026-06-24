@@ -12,3 +12,4 @@ C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\refint\
 C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ListaDeCompras.ConsoleApp.pdb
 C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ListaDeCompras.ConsoleApp.genruntimeconfig.cache
 C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ref\ListaDeCompras.ConsoleApp.dll
+C:\Academia C#\ListaDeCompras\ListaDeCompras.ConsoleApp\obj\Debug\net9.0\ListaDeCompras.ConsoleApp.sourcelink.json
