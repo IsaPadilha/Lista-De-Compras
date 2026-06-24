@@ -89,4 +89,30 @@ public class TelaCategoria : TelaBase, ITelaOpcoes
 
         return new Categoria(nome!, cor);
     }
+
+    protected override bool ExisteRegistroComInformacoesExclusivas(EntidadeBase entidade, int? idIgnorado = null)
+    {
+        Categoria novaCategoria = (Categoria)entidade;
+
+        EntidadeBase[] categorias = repositorioCategoria.SelecionarTodos();
+
+        for (int i = 0; i < categorias.Length; i++)
+        {
+            Categoria c = (Categoria)categorias[i];
+
+            if (c == null)
+                continue;
+
+            if (idIgnorado != c.Id && novaCategoria.Nome == c.Nome)
+            {
+                Console.WriteLine("---------------------------------");
+                Console.WriteLine($"Já existe uma categoria com o nome \"{c.Nome}\"!");
+                Console.WriteLine("---------------------------------");
+
+                return true;
+            }
+        }
+
+        return base.ExisteRegistroComInformacoesExclusivas(entidade);
+    }
 }

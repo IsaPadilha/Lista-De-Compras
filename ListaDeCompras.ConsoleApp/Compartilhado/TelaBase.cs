@@ -35,6 +35,13 @@ public abstract class TelaBase
 
         EntidadeBase novaEntidade = ObterDadosCadastrais();
 
+        if (ExisteRegistroComInformacoesExclusivas(novaEntidade))
+        {
+            Console.Write("Digite ENTER para continuar");
+            Console.ReadLine();
+            return;
+        }
+
         repositorio.Cadastrar(novaEntidade);
 
         Console.WriteLine("---------------------------------");
@@ -61,6 +68,12 @@ public abstract class TelaBase
 
         EntidadeBase entidadeAtualizada = ObterDadosCadastrais();
 
+        if (ExisteRegistroComInformacoesExclusivas(entidadeAtualizada, idSelecionado))
+        {
+            Console.WriteLine("Digite ENTER para continuar");
+            Console.ReadLine();
+            return;
+        }
         repositorio.Editar(idSelecionado, entidadeAtualizada);
 
         Console.WriteLine("---------------------------------");
@@ -97,4 +110,9 @@ public abstract class TelaBase
     public abstract void VisualizarTodos(bool deveExibirCabecalho);
 
     protected abstract EntidadeBase ObterDadosCadastrais();
+
+    protected virtual bool ExisteRegistroComInformacoesExclusivas(EntidadeBase entidade, int? idIgnorado = null)
+    {
+        return false;
+    }
 }
