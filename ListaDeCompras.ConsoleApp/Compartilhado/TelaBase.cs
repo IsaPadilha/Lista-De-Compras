@@ -4,11 +4,13 @@ public abstract class TelaBase
 {
     private string nomeEntidade = string.Empty;
     private RepositorioBase repositorio;
+
     protected TelaBase(string nomeEntidade, RepositorioBase repositorio)
     {
         this.nomeEntidade = nomeEntidade;
         this.repositorio = repositorio;
     }
+
     public virtual string? ObterOpcaoMenu()
     {
         Console.WriteLine("---------------------------------");
@@ -30,14 +32,14 @@ public abstract class TelaBase
     public void Cadastrar()
     {
         Console.WriteLine("---------------------------------");
-        Console.WriteLine("Cadastro de {nomeEntidade}");
+        Console.WriteLine($"Cadastro de {nomeEntidade}");
         Console.WriteLine("---------------------------------");
 
         EntidadeBase novaEntidade = ObterDadosCadastrais();
 
         if (ExisteRegistroComInformacoesExclusivas(novaEntidade))
         {
-            Console.Write("Digite ENTER para continuar");
+            Console.WriteLine("Digite ENTER para continuar");
             Console.ReadLine();
             return;
         }
@@ -45,7 +47,7 @@ public abstract class TelaBase
         repositorio.Cadastrar(novaEntidade);
 
         Console.WriteLine("---------------------------------");
-        Console.WriteLine($"O registro \"{novaEntidade.Id}\" foi cadastado com sucesso!");
+        Console.WriteLine($"O registro \"{novaEntidade.Id}\" foi cadastrado com sucesso!");
         Console.WriteLine("---------------------------------");
         Console.WriteLine("Digite ENTER para continuar");
         Console.ReadLine();
@@ -61,7 +63,7 @@ public abstract class TelaBase
 
         Console.WriteLine("---------------------------------");
 
-        Console.WriteLine("Digite o ID do registro que deseja editar: ");
+        Console.Write("Digite o ID do registro que deseja editar: ");
         int idSelecionado = Convert.ToInt32(Console.ReadLine());
 
         Console.WriteLine("---------------------------------");
@@ -74,10 +76,11 @@ public abstract class TelaBase
             Console.ReadLine();
             return;
         }
+
         repositorio.Editar(idSelecionado, entidadeAtualizada);
 
         Console.WriteLine("---------------------------------");
-        Console.WriteLine($"O registro \"{entidadeAtualizada.Id}\" goi editado com sucesso!");
+        Console.WriteLine($"O registro \"{entidadeAtualizada.Id}\" foi editado com sucesso!");
         Console.WriteLine("---------------------------------");
         Console.WriteLine("Digite ENTER para continuar");
         Console.ReadLine();
@@ -86,10 +89,9 @@ public abstract class TelaBase
     public void Excluir()
     {
         Console.WriteLine("---------------------------------");
-        Console.WriteLine("Exclusão de {nomeEntidade}");
+        Console.WriteLine($"Exclusão de {nomeEntidade}");
         Console.WriteLine("---------------------------------");
 
-        // visualizar revistas cadastradas e obter o ID que deseja excluir
         VisualizarTodos(false);
 
         Console.WriteLine("---------------------------------");
@@ -97,11 +99,17 @@ public abstract class TelaBase
         Console.Write("Digite o ID do registro que deseja excluir: ");
         int idSelecionado = Convert.ToInt32(Console.ReadLine());
 
-        // excluir a revista no repositório
+        if (ExistemDependenciasAtivasDoRegistro(idSelecionado))
+        {
+            Console.WriteLine("Digite ENTER para continuar");
+            Console.ReadLine();
+            return;
+        }
+
         repositorio.Excluir(idSelecionado);
 
         Console.WriteLine("---------------------------------");
-        Console.WriteLine($"O registro de ID \"{idSelecionado}\" foi excluído com sucesso!");
+        Console.WriteLine($"O registro \"{idSelecionado}\" foi excluído com sucesso!");
         Console.WriteLine("---------------------------------");
         Console.WriteLine("Digite ENTER para continuar");
         Console.ReadLine();
@@ -112,6 +120,11 @@ public abstract class TelaBase
     protected abstract EntidadeBase ObterDadosCadastrais();
 
     protected virtual bool ExisteRegistroComInformacoesExclusivas(EntidadeBase entidade, int? idIgnorado = null)
+    {
+        return false;
+    }
+
+    protected virtual bool ExistemDependenciasAtivasDoRegistro(int idRegistro)
     {
         return false;
     }
