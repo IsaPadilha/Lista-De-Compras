@@ -3,10 +3,22 @@ using ListaDeCompras.ConsoleApp.Modulos.ModuloCategoria;
 
 namespace ListaDeCompras.ConsoleApp.Modulos.ModuloProduto;
 
+public static class GeradorIdsProduto
+{
+    private static int contadorIds = 1;
+    public static int GerarId()
+    {
+        return contadorIds++;
+    }
+
+}
 public enum UnidadeDeMedida
 {
     Kg,
     Unidade,
+    Duzia,
+    Ml,
+    G,
     Litro,
     Caixa
 }
@@ -14,31 +26,22 @@ public class Produto : EntidadeBase
 {
     public string Nome { get; private set; }
     public Categoria Categoria { get; private set; }
-
+    public int ValorUnidadeMedida { get; private set; }
     public UnidadeDeMedida UnidadeDeMedida { get; private set; }
-
     public decimal Preco { get; private set; }
 
     public Produto(
         string nome,
         Categoria categoria,
+        int valorUnidadeMedida,
         UnidadeDeMedida unidadeDeMedida,
         decimal preco)
     {
-        if (string.IsNullOrWhiteSpace(nome))
-            throw new ArgumentException("O Nome é obrigatório.");
-
-        if (nome.Length < 2 || nome.Length > 100)
-            throw new ArgumentException("O Nome deve ter entre 2 e 100 caracteres.");
-
-        if (categoria == null)
-            throw new ArgumentException("A Categoria é obrigatória.");
-
-        if (preco <= 0)
-            throw new ArgumentException("O Preço deve ser maior que 0.");
+        Id = GeradorIdsProduto.GerarId();
 
         Nome = nome;
         Categoria = categoria;
+        ValorUnidadeMedida = valorUnidadeMedida;
         UnidadeDeMedida = unidadeDeMedida;
         Preco = preco;
     }
@@ -49,6 +52,7 @@ public class Produto : EntidadeBase
 
         Nome = produtoAtualizado.Nome;
         Categoria = produtoAtualizado.Categoria;
+        ValorUnidadeMedida = produtoAtualizado.ValorUnidadeMedida;
         UnidadeDeMedida = produtoAtualizado.UnidadeDeMedida;
         Preco = produtoAtualizado.Preco;
 
