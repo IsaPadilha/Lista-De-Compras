@@ -1,5 +1,7 @@
 ﻿using ListaDeCompras.ConsoleApp.Compartilhado;
+using ListaDeCompras.ConsoleApp.Modulos.ModuloCategoria;
 using ListaDeCompras.ConsoleApp.Modulos.ModuloListaCompras;
+using ListaDeCompras.ConsoleApp.Modulos.ModuloProduto;
 
 TelaPrincipal telaPrincipal = new TelaPrincipal();
 
@@ -17,7 +19,7 @@ while (true)
         if (opcaoMenuInterno == "S")
             break;
 
-        if (telaSelecionada is TelaBase telaBase)
+        if (telaSelecionada is ITelaCrud telaBase)
         {
             if (opcaoMenuInterno == "1")
                 telaBase.Cadastrar();
