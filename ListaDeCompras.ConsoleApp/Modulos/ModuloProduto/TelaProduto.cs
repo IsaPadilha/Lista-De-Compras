@@ -133,7 +133,8 @@ public class TelaProduto : TelaBase, ITelaOpcoes
         preco);
     }
 
-    protected override bool ExisteRegistroComInformacoesExclusivas(EntidadeBase entidade, int? idIgnorado = null)
+    protected override bool ExisteRegistroComInformacoesExclusivas(
+        EntidadeBase entidade, int? idIgnorado = null)
     {
         Produto produto = (Produto)entidade;
 
@@ -153,12 +154,13 @@ public class TelaProduto : TelaBase, ITelaOpcoes
             )
             {
                 Console.WriteLine("---------------------------------");
-                Console.WriteLine($"Já existe um produto com o nome {p.Nome}na ategoria!");
+                Console.WriteLine($"Já existe um produto com o nome {p.Nome} na categoria!");
                 Console.WriteLine("---------------------------------");
 
                 return true;
             }
         }
+
         return base.ExisteRegistroComInformacoesExclusivas(entidade, idIgnorado);
     }
 

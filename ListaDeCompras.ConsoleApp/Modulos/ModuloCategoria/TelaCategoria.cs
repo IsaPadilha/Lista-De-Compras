@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using ListaDeCompras.ConsoleApp.Compartilhado;
 using ListaDeCompras.ConsoleApp.Modulos.ModuloProduto;
 
