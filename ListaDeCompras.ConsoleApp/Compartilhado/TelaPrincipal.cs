@@ -1,5 +1,4 @@
 using ListaDeCompras.ConsoleApp.Modulos.ModuloCategoria;
-using ListaDeCompras.ConsoleApp.Modulos.ModuloItemListaCompras;
 using ListaDeCompras.ConsoleApp.Modulos.ModuloProduto;
 using ListaDeCompras.ConsoleApp.Modulos.ModuloListaCompras;
 
