@@ -11,27 +11,11 @@ public class TelaPrincipal
     private readonly RepositorioListaCompras repositorioListaCompras;
     public TelaPrincipal()
     {
-        Categoria categoriaTeste = new Categoria("Produtos de Limpeza", CorCategoria.Vermelho);
-
         repositorioCategoria = new RepositorioCategoria();
-        repositorioCategoria.Cadastrar(categoriaTeste);
-
-        Produto produtoTeste = new Produto(
-            "Detergente Limpol",
-            categoriaTeste,
-            1,
-            UnidadeDeMedida.Litro,
-            18.50m);
 
         repositorioProduto = new RepositorioProduto();
-        repositorioProduto.Cadastrar(produtoTeste);
-
-        ListaCompras listaTeste = new ListaCompras("Compras do Mês");
-        listaTeste.AdicionarItem(new ItemListaCompras(produtoTeste, 3));
 
         repositorioListaCompras = new RepositorioListaCompras();
-        repositorioListaCompras.Cadastrar(listaTeste);
-
     }
 
     public ITelaOpcoes? ObterOpcaoMenuPrincipal()
