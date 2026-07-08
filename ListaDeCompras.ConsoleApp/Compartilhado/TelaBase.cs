@@ -37,6 +37,22 @@ public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
 
         TEntidade novaEntidade = ObterDadosCadastrais();
 
+        List<string> erros = novaEntidade.Validar();
+
+        if (erros.Count > 0)
+        {
+            string erro = erros.First();
+
+            Console.WriteLine("---------------------------------");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(erro);
+            Console.ResetColor();
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("Digite ENTER para continuar");
+            Console.ReadLine();
+            return;
+        }
+
         if (ExisteRegistroComInformacoesExclusivas(novaEntidade))
         {
             Console.WriteLine("Digite ENTER para continuar");
@@ -69,6 +85,22 @@ public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
         Console.WriteLine("---------------------------------");
 
         TEntidade entidadeAtualizada = ObterDadosCadastrais();
+
+        List<string> erros = entidadeAtualizada.Validar();
+
+        if (erros.Count > 0)
+        {
+            string erro = erros.First();
+
+            Console.WriteLine("---------------------------------");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(erro);
+            Console.ResetColor();
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("Digite ENTER para continuar");
+            Console.ReadLine();
+            return;
+        }
 
         if (ExisteRegistroComInformacoesExclusivas(entidadeAtualizada, idSelecionado))
         {

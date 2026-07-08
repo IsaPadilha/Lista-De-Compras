@@ -44,4 +44,20 @@ public class Categoria : EntidadeBase
         Nome = categoriaAtualizada.Nome;
         Cor = categoriaAtualizada.Cor;
     }
+
+    public override List<string> Validar()
+    {
+        List<string> erros = new List<string>();
+
+        if (string.IsNullOrWhiteSpace(Nome))
+            erros.Add("O campo\"Nome\" precisa ser preenchido.");
+
+        else if (Nome.Length > 50)
+            erros.Add("O camp \"Nome\" pode conter no máximo 50 caracteres.");
+
+        if (!Enum.IsDefined(Cor))
+            erros.Add("O campo \"Cor\" deve conter uma seleção permitida (Branco, Vermelho, Verde, Azul).");
+
+        return erros;
+    }
 }
