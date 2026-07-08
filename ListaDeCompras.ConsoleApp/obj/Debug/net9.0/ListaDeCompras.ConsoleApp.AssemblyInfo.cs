@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ListaDeCompras.ConsoleApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7fbf2bf082ac0303b96017d39cfbcd58cd9a32d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09226060211f79c4bfcc3eddb6e667820334beae")]
 [assembly: System.Reflection.AssemblyProductAttribute("ListaDeCompras.ConsoleApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ListaDeCompras.ConsoleApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

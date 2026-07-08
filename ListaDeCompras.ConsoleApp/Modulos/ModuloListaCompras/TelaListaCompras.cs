@@ -49,15 +49,10 @@ public class TelaListaCompras : TelaBase<ListaCompras>, ITelaOpcoes, ITelaCrud
             "Id", "Nome", "Data de Criação", "Status"
         );
 
-        EntidadeBase[] registros = repositorioListaCompras.SelecionarTodos();
+        List<ListaCompras> registros = repositorioListaCompras.SelecionarTodos();
 
-        for (int i = 0; i < registros.Length; i++)
+        foreach (ListaCompras l in registros)
         {
-            ListaCompras l = (ListaCompras)registros[i];
-
-            if (l == null)
-                continue;
-
             Console.WriteLine(
                 "{0, -7} | {1, -20} | {2, -15} | {3, -10}",
                 l.Id, l.Nome, l.DataCriacao.ToShortDateString(), l.Status
@@ -213,15 +208,10 @@ public class TelaListaCompras : TelaBase<ListaCompras>, ITelaOpcoes, ITelaCrud
             "Id", "Nome", "Categoria", "Unidade", "Preço Aproximado"
         );
 
-        Produto[] produtos = repositorioProduto.SelecionarTodos();
+        List<Produto> produtos = repositorioProduto.SelecionarTodos();
 
-        for (int i = 0; i < produtos.Length; i++)
+        foreach (Produto p in produtos)
         {
-            Produto p = produtos[i];
-
-            if (p == null)
-                continue;
-
             Console.WriteLine(
                 "{0, -7} | {1, -20} | {2, -20} | {3, -10} | {4, -17}",
                 p.Id,

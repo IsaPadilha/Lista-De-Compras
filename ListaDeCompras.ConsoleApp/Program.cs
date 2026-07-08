@@ -1,7 +1,5 @@
 ﻿using ListaDeCompras.ConsoleApp.Compartilhado;
-using ListaDeCompras.ConsoleApp.Modulos.ModuloCategoria;
 using ListaDeCompras.ConsoleApp.Modulos.ModuloListaCompras;
-using ListaDeCompras.ConsoleApp.Modulos.ModuloProduto;
 
 TelaPrincipal telaPrincipal = new TelaPrincipal();
 
