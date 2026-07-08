@@ -24,11 +24,16 @@ public enum UnidadeDeMedida
 }
 public class Produto : EntidadeBase
 {
-    public string Nome { get; private set; }
-    public Categoria Categoria { get; private set; }
-    public int ValorUnidadeMedida { get; private set; }
-    public UnidadeDeMedida UnidadeDeMedida { get; private set; }
-    public decimal Preco { get; private set; }
+    public string Nome { get; set; }
+    public Categoria Categoria { get; set; }
+    public int ValorUnidadeMedida { get; set; }
+    public UnidadeDeMedida UnidadeDeMedida { get; set; }
+    public decimal Preco { get; set; }
+
+    public Produto()
+    {
+
+    }
 
     public Produto(
         string nome,
