@@ -50,6 +50,10 @@ public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
             Console.WriteLine("---------------------------------");
             Console.WriteLine("Digite ENTER para continuar");
             Console.ReadLine();
+
+            // Recursão: Quando um método executa/chama o próprio método
+            // Stack Overflow: Quando a pilha de chamados (call stack) "transborda"
+            Cadastrar();
             return;
         }
 
@@ -57,6 +61,8 @@ public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
         {
             Console.WriteLine("Digite ENTER para continuar");
             Console.ReadLine();
+
+            Cadastrar();
             return;
         }
 
@@ -99,6 +105,10 @@ public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
             Console.WriteLine("---------------------------------");
             Console.WriteLine("Digite ENTER para continuar");
             Console.ReadLine();
+
+            // Recursão: Quando um método executa/chama o próprio método
+            // Stack Overflow: Quando a pilha de chamados (call stack) "transborda"
+            Editar();
             return;
         }
 
@@ -106,6 +116,8 @@ public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
         {
             Console.WriteLine("Digite ENTER para continuar");
             Console.ReadLine();
+
+            Editar();
             return;
         }
 
