@@ -23,7 +23,7 @@ public class ListaCompras : EntidadeBase
     public string Nome { get; set; }
     public DateTime DataCriacao { get; set; }
     public StatusListaCompras Status { get; set; } = StatusListaCompras.Aberta;
-    public ItemListaCompras[] Itens { get; set; } = new ItemListaCompras[100];
+    public List<ItemListaCompras> Itens { get; set; } = new List<ItemListaCompras>();
 
     public ListaCompras()
     {
@@ -39,26 +39,17 @@ public class ListaCompras : EntidadeBase
 
     public void AdicionarItem(ItemListaCompras itemLista)
     {
-        for (int i = 0; i < Itens.Length; i++)
-        {
-            if (Itens[i] == null)
-            {
-                Itens[i] = itemLista;
-                return;
-            }
-        }
+        Itens.Add(itemLista);
     }
 
     public void RemoverItem(int idItemLista)
     {
-        for (int i = 0; i < Itens.Length; i++)
+        foreach (ItemListaCompras item in Itens)
         {
-            if (Itens[i] == null)
-                continue;
-
-            if (Itens[i].Id == idItemLista)
+            if (item.Id == idItemLista)
             {
-                Itens[i] = null;
+                Itens.Remove(item);
+
                 return;
             }
         }

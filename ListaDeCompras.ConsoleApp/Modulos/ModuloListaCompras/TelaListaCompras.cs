@@ -168,15 +168,10 @@ public class TelaListaCompras : TelaBase<ListaCompras>, ITelaOpcoes, ITelaCrud
            "Id", "Produto", "Quantidade", "Preço Total"
        );
 
-        ItemListaCompras[] itensLista = listaSelecionada.Itens;
+        List<ItemListaCompras> itensLista = listaSelecionada.Itens;
 
-        for (int i = 0; i < itensLista.Length; i++)
+        foreach (ItemListaCompras item in itensLista)
         {
-            ItemListaCompras item = itensLista[i];
-
-            if (item == null)
-                continue;
-
             Console.WriteLine(
                 "{0, -7} | {1, -20} | {2, -15} | {3, -10}",
                 item.Id, item.Produto.Nome, item.Quantidade, item.PrecoTotal.ToString("C2")
